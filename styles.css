@@ -1,3 +1,25 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.mov-info {
+    border: solid;
+    border-style: ridge;
+    border-radius: 25px;
+    padding: 5px;
+    background-color: #fafafa;
+    border-color: #fafafa;
+}
+
+.main-text {
+    color: #fafafa;
+}
+
+#mov-title {
+    font-weight: bold;
+    font-size: 50px;
+}
+
 #search-btn {
     height: 3rem;
     align-self: center;

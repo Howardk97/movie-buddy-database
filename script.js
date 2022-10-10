@@ -7,7 +7,9 @@ const movGenre = document.getElementById('genre');
 const movYear = document.getElementById('year');
 const movRated = document.getElementById('rated');
 const movPlot = document.getElementById('plot');
-const homeImg = document.getElementById('home-img');
+const homeImgContainer = document.getElementById('home-img-container');
+const movDirector = document.getElementById('director');
+const movWriter = document.getElementById('writer');
 
 let movieTitle;
 
@@ -19,7 +21,7 @@ let movieTitle;
 
 function genInfo (e) {
     if(e.key === 'Enter') {
-        homeImg.style.display = 'none';
+        homeImgContainer.style.display = 'none';
         const userInput = searchInput.value;
     e.preventDefault();
     const movieURL = "https://www.omdbapi.com/?t=" + userInput + "&apikey=4e92771";
@@ -44,9 +46,13 @@ function genInfo (e) {
             movRated.textContent = data.Rated;
             movYear.textContent = data.Year;
             movPlot.textContent = data.Plot;
+            movDirector.textContent = "Director: " + data.Director;
+            movWriter.textContent = "Writer: " + data.Writer;
         })
         .catch(err => console.error(err)); 
     }
+    } else {
+        movTitle.textContent = "No movie with this title"
     }
 }
 
