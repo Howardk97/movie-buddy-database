@@ -24,3 +24,8 @@
 #search-input {
     text-indent: 3rem;
 }
+
+#logo {
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+}
