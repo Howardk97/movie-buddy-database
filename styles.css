@@ -1,3 +1,8 @@
+#search-btn {
+    height: 3rem;
+    align-self: center;
+}
+
 #mov-img {
     margin-right: 5rem;
 }
@@ -9,4 +14,13 @@
 #main-container {
     margin-left: 20rem;
     margin-right: 20rem;
+}
+
+#home-img {
+    width: 100vw;
+    height: 100vh;
+}
+
+#search-input {
+    text-indent: 3rem;
 }

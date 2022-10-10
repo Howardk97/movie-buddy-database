@@ -7,6 +7,7 @@ const movGenre = document.getElementById('genre');
 const movYear = document.getElementById('year');
 const movRated = document.getElementById('rated');
 const movPlot = document.getElementById('plot');
+const homeImg = document.getElementById('home-img');
 
 let movieTitle;
 
@@ -17,7 +18,9 @@ let movieTitle;
 // })
 
 function genInfo (e) {
-    const userInput = searchInput.value;
+    if(e.key === 'Enter') {
+        homeImg.style.display = 'none';
+        const userInput = searchInput.value;
     e.preventDefault();
     const movieURL = "https://www.omdbapi.com/?t=" + userInput + "&apikey=4e92771";
 
@@ -44,7 +47,8 @@ function genInfo (e) {
         })
         .catch(err => console.error(err)); 
     }
+    }
 }
 
 
-searchBtn.addEventListener("click", genInfo)
+searchInput.addEventListener("keypress", genInfo)

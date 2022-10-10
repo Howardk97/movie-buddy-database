@@ -12,24 +12,36 @@
     <link rel="stylesheet" href="styles.css">
 
     <!-- Compiled and minified CSS -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Compiled and minified JavaScript -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <title>Movie Database</title>
 </head>
 <body>
     <!-- Header of page -->
-    <header>
-        <nav class="navbar navbar-light bg-light justify-content-between">
+    <header class="grey darken-4">
+        <nav class="navbar navbar-light bg-light justify-content-between p-1 grey darken-4">
             <a class="navbar-brand col-3 mx-5">Movie Database</a>
-            <form class="form-inline d-flex justify-content-between mx-5">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search-input">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="search-btn">Search</button>
+            <!-- <form class="form-inline d-flex justify-content-between align-items-center mx-5">
+              <input class="search form-control grey lighten-5 rounded" type="search" placeholder="Search" aria-label="Search" id="search-input">
+              <button class="search btn btn-outline-success rounded" type="submit" id="search-btn">Search</button>
+            </form> -->
+            <form class="col-4">
+                <div class="input-field">
+                  <input id="search-input" type="search" required>
+                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
+                </div>
             </form>
           </nav>
     </header>
+    <div>
+        <img src="./public/images/movie-bg.jpg" alt="homepage image" id="home-img">
+    </div>
     <main class="row" id="main-container">
         <label class="text-center" id="mov-title"></label>
         <div class="d-flex justify-content-center mt-5">
