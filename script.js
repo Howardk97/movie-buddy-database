@@ -12,6 +12,16 @@ const movDirector = document.getElementById('director');
 const movWriter = document.getElementById('writer');
 const awardIcon = document.getElementById('award-icon');
 const award = document.getElementById("award");
+const mapIcon = document.getElementById('map-icon');
+const country = document.getElementById('country');
+const langIcon = document.getElementById('lang-icon');
+const lang = document.getElementById('lang');
+const typeIcon = document.getElementById('type-icon');
+const type = document.getElementById('type');
+const timeIcon = document.getElementById('time-icon');
+const runtime = document.getElementById('runtime');
+const reviewIcon = document.getElementById('review-icon');
+const review = document.getElementById('review');
 
 let movieTitle;
 
@@ -41,17 +51,79 @@ function genInfo (e) {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            movTitle.textContent = data.Title;
-            movImg.src = data.Poster;
-            movActors.textContent = data.Actors;
-            movGenre.textContent = data.Genre;
-            movRated.textContent = data.Rated;
-            movYear.textContent = data.Year;
-            movPlot.textContent = data.Plot;
-            movDirector.textContent = "Director: " + data.Director;
-            movWriter.textContent = "Writer: " + data.Writer;
-            awardIcon.textContent = "star";
-            award.textContent = data.Awards;
+            
+            if(data.Title) {
+                movTitle.textContent = data.Title;
+            }
+
+            if(data.Poster) {
+                movImg.src = data.Poster;
+            }
+
+            if(data.Actors) {
+                movActors.textContent = data.Actors;
+            }
+            
+            if(data.Genre) {
+                movGenre.textContent = data.Genre;
+            }
+            
+            if(data.Rated) {
+                movRated.textContent = data.Rated;
+            }
+            
+            if(data.Year) {
+                movYear.textContent = data.Year;
+            }
+            
+            if(data.Plot) {
+                movPlot.textContent = data.Plot;
+            }
+            
+            if(data.Director) {
+                movDirector.textContent = "Director: " + data.Director;
+            }
+            
+            if(data.Writer) {
+                movWriter.textContent = "Writer: " + data.Writer;
+            }
+            
+            if(data.Awards) {
+                awardIcon.textContent = "star";
+                award.textContent = data.Awards;
+            }
+
+            if(data.Country) {
+                mapIcon.textContent = "map";
+                country.textContent = data.Country;
+            }
+
+            if(data.Language) {
+                langIcon.textContent = "language";
+                lang.textContent = data.Language;
+            }
+
+            if(data.Type) {
+                if(data.Type === "movie") {
+                    typeIcon.textContent = "movie";
+                }
+                if(data.Type === "series") {
+                    typeIcon.textContent = "live_tv";
+                }
+
+                type.textContent = data.Type;
+            }
+
+            if(data.Runtime) {
+                timeIcon.textContent = "access_time";
+                runtime.textContent = data.Runtime;
+            }
+
+            if(data.imdbRating) {
+                reviewIcon.textContent = "rate_review";
+                review.textContent = "IMDB Rating: " + data.imdbRating + "/10";
+            }
+
         })
         .catch(err => console.error(err)); 
     }
@@ -59,6 +131,5 @@ function genInfo (e) {
         movTitle.textContent = "No movie with this title"
     }
 }
-
 
 searchInput.addEventListener("keypress", genInfo)
