@@ -10,6 +10,8 @@ const movPlot = document.getElementById('plot');
 const homeImgContainer = document.getElementById('home-img-container');
 const movDirector = document.getElementById('director');
 const movWriter = document.getElementById('writer');
+const awardIcon = document.getElementById('award-icon');
+const award = document.getElementById("award");
 
 let movieTitle;
 
@@ -48,6 +50,8 @@ function genInfo (e) {
             movPlot.textContent = data.Plot;
             movDirector.textContent = "Director: " + data.Director;
             movWriter.textContent = "Writer: " + data.Writer;
+            awardIcon.textContent = "star";
+            award.textContent = data.Awards;
         })
         .catch(err => console.error(err)); 
     }
