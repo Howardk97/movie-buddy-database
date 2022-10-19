@@ -1,7 +1,4 @@
-# project1
-repo for project 1
-
-# Movies
+# Movie Buddy Database
 You can look up any movie or TV show and you're given
 the poster, imdb ratings, the plot, and other info such as the genre, year, country, and languages.
 
